@@ -1,0 +1,48 @@
+.wrapper {
+    
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    border: none;
+    outline: none;
+    margin-top: 24px;
+    font-size: 1.3rem;
+    color: var(--white);
+    border-radius: 3px;
+    cursor: pointer;
+    span {
+        padding-left: 12px;
+    }
+
+    &:hover {opacity: 0.8;}
+}
+
+.lager {
+    padding: 12px 24px;
+    width: 100%;
+    background: transparent linear-gradient(180deg,#ff990e 0%,#ff6801 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0 4px 6px #00000029;
+}
+
+
+.medium {
+    padding: 8px 24px;
+    width: 100%;
+    background: #00483d 0% 0% no-repeat padding-box;
+    text-transform: uppercase;
+        pointer-events: none;
+
+}
+
+.primary {
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 14px 32px;
+    width: 100%;
+    background: linear-gradient(rgb(0, 153, 129) 0%, rgb(0, 72, 61) 100%) 0% 0% no-repeat padding-box padding-box transparent;
+}
