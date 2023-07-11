@@ -160,23 +160,35 @@ const Cart = () => {
           </div>
           <div className={cx("cart-form")}>
             <h2>Thông tin đặt hàng</h2>
-            <p>Bạn cần nhập đầy đủ các trường thông tin có dấu *</p>
+            <p className={cx("note")}>
+              Bạn cần nhập đầy đủ các trường thông tin có dấu *
+            </p>
             <div className={cx("form-control")}>
-              <input type="text" placeholder="Họ và tên *" />
+              <input
+                className={cx("error")}
+                type="text"
+                placeholder="Họ và tên *"
+              />
+              <p>Trường này không được để trống</p>
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Số điện thoại *" />
+              <p></p>
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Email" />
+              <p></p>
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Địa chỉ nhận hàng *" />
+              <p>Trường này không được để trống</p>
             </div>
-            <Link to={"/checkout"}>
-              {" "}
-              <Button type="primary">Xác nhận đặt hàng</Button>
-            </Link>
+
+            <div className={cx("button")}>
+              <Button to={"/checkout"} type="primary">
+                Xác nhận đặt hàng
+              </Button>
+            </div>
           </div>
         </div>
       </div>

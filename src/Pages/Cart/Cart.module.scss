@@ -193,7 +193,7 @@ span {
         margin-bottom: 25px;
     }
 
-    p {
+    .note {
         font-size: 1.3rem;
         color: #aaa;
         font-style: italic;
@@ -203,19 +203,58 @@ span {
 
 }
 
-.form-control {
-    background-color: #e5e5e5;
-    margin: 6px 0;
-    width: 100%;
-    padding: 6px 0;
-    padding-left: 12px;
-    border-radius: 4px;
-    input {
-        color: #444;
-        background: none;
-        font-size: 1.3rem;
-        border: none;
-        outline: none;
-    }
+// .form-control {
+//     background-color: #e5e5e5;
+//     margin: 6px 0;
+//     width: 100%;
+//     padding: 6px 0;
+//     padding-left: 12px;
+//     border-radius: 4px;
+//     input {
+//         color: #444;
+//         background: none;
+//         font-size: 1.3rem;
+//         border: none;
+//         outline: none;
+//     }
  
+// }
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    width: 100%;
+
+    label {
+        font-size: 1.4rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        background-color: #e5e5e583;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 1.4rem;
+        border: 1px solid #e5e5e5;
+    }
+
+    .error {
+        border: 1px solid #fd475a;
+    }
+
+    p {
+        padding-left: 4px;
+        display: block;
+        font-size: 1.2rem;
+        color: #fd475a;
+        height: 12px
+    }
+}
+
+.button {
+    width: 100%;
 }

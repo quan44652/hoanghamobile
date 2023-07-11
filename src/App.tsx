@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/Home/Home";
 import ProductListPage from "./Pages/ProductListPage/ProductListPage";
@@ -8,12 +9,37 @@ import Order from "./Pages/Order/Order";
 import Account from "./Pages/Account/Account";
 import YourOrderList from "./Pages/Account/OrderList";
 import History from "./Pages/Account/History";
-import Wishlist from "./Pages/Account/wishlist";
 import Info from "./Pages/Account/Info";
+import Wishlist from "./Pages/Account/Wishlist";
+
+import { BiSolidUpArrow } from "react-icons/bi";
+import Button from "./Components/Button/Button";
+import Login from "./Pages/Auth/Login";
+import Regester from "./Pages/Auth/Regester";
+import Forget from "./Pages/Auth/forget";
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScrollY = () => {
+    if (window.scrollY > 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScrollY);
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <>
+    <div className="app">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/san-pham" element={<ProductListPage />} />
@@ -27,8 +53,19 @@ function App() {
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="info" element={<Info />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/regester" element={<Regester />} />
+        <Route path="/forget" element={<Forget />} />
       </Routes>
-    </>
+
+      {isVisible && (
+        <Button
+          _onClick={handleClick}
+          type="backtotop"
+          icon={<BiSolidUpArrow />}
+        />
+      )}
+    </div>
   );
 }
 
